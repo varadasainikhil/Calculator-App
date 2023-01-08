@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                         if (prefix.isNotEmpty()){
                             one = prefix+one
                         }
-                        val output = (one.toDouble() * two.toDouble()).toString()
+                        val output = (one.toDouble() - two.toDouble()).toString()
                         tvInput?.text= removeZeroAfterDot(output)
                     }
 
@@ -83,7 +83,7 @@ class MainActivity : AppCompatActivity() {
                         val splitValue = tvValue.split("+")
                         val one = splitValue[0]
                         val two = splitValue[1]
-                        val output = (one.toDouble() * two.toDouble()).toString()
+                        val output = (one.toDouble() + two.toDouble()).toString()
                         tvInput?.text= removeZeroAfterDot(output)
                     }
 
@@ -92,6 +92,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             else if(tvValue.contains("/")){
+                //Division
                 try {
                     if (tvValue.startsWith("-")){
                         prefix = "-"
@@ -101,7 +102,7 @@ class MainActivity : AppCompatActivity() {
                         val splitValue = tvValue.split("/")
                         val one = splitValue[0]
                         val two = splitValue[1]
-                        val output = (one.toDouble() * two.toDouble()).toString()
+                        val output = (one.toDouble() / two.toDouble()).toString()
                         tvInput?.text= removeZeroAfterDot(output)
                     }
                 }catch (e: ArithmeticException){
